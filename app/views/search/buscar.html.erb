@@ -1,0 +1,12 @@
+<h3>Resultados de la búsqueda</h3>
+<br>
+<% if @resultados.any? %>
+    <% @resultados.each do |resultado| %>
+      <p><%= resultado.username %></p>
+      <p><%= resultado.description %></p>
+      <br>
+      <%= link_to "Ir a la lista de Post", tweets_path %>
+    <% end %>
+  <% else %>
+    <p>No se encontraron resultados.</p>
+<% end %>
