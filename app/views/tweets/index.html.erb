@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Proyecto Red Social (Twitter)</h1>
+
+<div id="tweets">
+  <% @tweets.each do |tweet| %>
+    <%= render tweet %>
+    <p>
+      <%= link_to "Mostrar este Post", tweet %>
+    </p>
+  <% end %>
+</div>
+
+<form action="/busqueda" method="get">
+  <input type="text" name="query" placeholder="Buscar...">
+  <input type="submit" value="Buscar">
+</form>
+<br>
+<% @tweets.each do |tweet| %>
+<% end %>
+<%= paginate @tweets %>
+<button type="button" class="btn btn-success">
+<%= link_to "Nuevo Post", new_tweet_path, class: 'nav-link' %>
+</button>
+
+
+
